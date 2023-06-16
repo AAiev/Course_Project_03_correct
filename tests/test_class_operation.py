@@ -42,3 +42,11 @@ def test_title_operation():
     """
     assert test_operation.title_operation() == 'Открытие вклада'
     assert test_operation_2.title_operation() == 'Перевод организации'
+
+def test_meaning_from():
+    """
+    тест для функции meaning_from - возвращает поле откуда, если имеется
+    """
+    assert test_operation.meaning_from() == ''
+    assert test_operation_2.meaning_from() == 'Visa Classic 2842 87** **** 9012 -> '
+    assert test_operation_3.meaning_from() == 'Счет **3655 -> '
