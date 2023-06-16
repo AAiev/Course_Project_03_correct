@@ -48,3 +48,26 @@ class Operation:
 
         else:
             return ""
+
+    def meaning_to(self):
+        """
+        возвращает поле КУДА в отформатированном варианте
+        """
+        title_to = self.dict_operation['to']
+        digit_str = []
+        sum_digit_in_str = sum(1 for i in title_to if i.isdigit())
+        for i in title_to:
+            if i.isdigit():
+                if len(digit_str) > 6 and len(digit_str) < (sum_digit_in_str - 4 + digit_str.count(' ')):
+                    digit_str.append('*')
+                    if len(digit_str) % 4 == (0 + digit_str.count(' ')) and len(digit_str) > 0:
+                        digit_str.append(' ')
+                else:
+                    digit_str.append(i)
+                    if len(digit_str) % 4 == (0 + digit_str.count(' ')) and 0 < len(digit_str) < sum_digit_in_str:
+                        digit_str.append(' ')
+        str_not_digit = ''.join([i for i in self.dict_operation['to'] if not i.isdigit()])
+        if 'счет' in title_to.lower():
+            return f"{str_not_digit}{''.join(digit_str[-7:]).replace(' ', '')}"
+        else:
+            return f"{str_not_digit} {''.join(digit_str[0:])}"
