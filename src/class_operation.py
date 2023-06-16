@@ -14,3 +14,9 @@ class Operation:
         date_operation_month = self.dict_operation['date'][5:7]
         date_operation_day = self.dict_operation['date'][8:10]
         return f'{date_operation_day}.{date_operation_month}.{date_operation_year}'
+
+    def title_operation(self):
+        """
+        возвращает название операции
+        """
+        return self.dict_operation['description']
