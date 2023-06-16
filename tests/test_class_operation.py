@@ -35,3 +35,10 @@ def test_date_operation():
     """
     assert test_operation.date_operation() == '08.12.2019'
     assert test_operation_2.date_operation() == '07.12.2019'
+
+def test_title_operation():
+    """
+    тест для функции title_operation - возвращает название операции
+    """
+    assert test_operation.title_operation() == 'Открытие вклада'
+    assert test_operation_2.title_operation() == 'Перевод организации'
