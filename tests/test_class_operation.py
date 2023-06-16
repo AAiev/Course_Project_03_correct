@@ -50,3 +50,8 @@ def test_meaning_from():
     assert test_operation.meaning_from() == ''
     assert test_operation_2.meaning_from() == 'Visa Classic 2842 87** **** 9012 -> '
     assert test_operation_3.meaning_from() == 'Счет **3655 -> '
+
+def test_meaning_to():
+    assert test_operation.meaning_to() == 'Счет **5907'
+    assert test_operation_2.meaning_to() == 'Счет **3655'
+    assert test_operation_3.meaning_to() == 'Счет '
